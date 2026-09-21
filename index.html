@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- Detectar el tema antes de pintar la página -->
+    <script>
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Rodrigo Cánovas, desarrollador Full Stack especializado en experiencias web modernas.">
+    <meta name="theme-color" content="#0a0f1d">
+
+    <title>RCM | Full Stack Developer</title>
+
+    <!-- Tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <!-- Efectos de iluminación -->
+    <div class="bg-glow glow-red"></div>
+    <div class="bg-glow glow-purple"></div>
+
+
+    <!-- ==========================================
+         NAVBAR
+         ========================================== -->
+
+    <nav class="navbar" aria-label="Navegación principal">
+
+        <div class="container nav-container">
+
+            <a href="#" class="logo">
+                RC<span>M</span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+
+                <a href="#sobre-mi" data-i18n="nav-about">
+                    Sobre mí
+                </a>
+
+                <a href="#proyectos" data-i18n="nav-projects">
+                    Proyectos
+                </a>
+
+                <a href="#contacto" data-i18n="nav-contact">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <div class="nav-controls">
+
+                <!-- Idioma -->
+                <button class="lang-toggle-btn" id="lang-btn" type="button" title="Cambiar idioma / Change language"
+                    aria-label="Cambiar a inglés">
+                    <span class="language-code language-en" aria-hidden="true">EN</span>
+                    <span class="language-separator" aria-hidden="true">/</span>
+                    <span class="language-code language-es is-active" aria-hidden="true">ES</span>
+                </button>
+
+
+                <!-- Tema -->
+                <label class="theme-switch">
+
+                    <input type="checkbox" id="theme-checkbox" aria-label="Cambiar tema de color">
+
+                    <span class="slider">
+
+                        <i class="fa-solid fa-sun"></i>
+
+                        <i class="fa-solid fa-moon"></i>
+
+                    </span>
+
+                </label>
+
+
+                <!-- Menú móvil -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Abrir menú"
+                    aria-expanded="false" aria-controls="mobile-overlay">
+
+                    <span class="burger-line line-1"></span>
+                    <span class="burger-line line-2"></span>
+                    <span class="burger-line line-3"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         MENÚ MÓVIL
+         ========================================== -->
+
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+
+        <div class="mobile-nav-links">
+
+            <a href="#sobre-mi" class="mobile-link" data-i18n="nav-about">
+                Sobre mí
+            </a>
+
+            <a href="#proyectos" class="mobile-link" data-i18n="nav-projects">
+                Proyectos
+            </a>
+
+            <a href="#contacto" class="mobile-link" data-i18n="nav-contact">
+                Contacto
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         HERO
+         ========================================== -->
+
+    <main id="contenido">
+        <section class="hero section-padding" aria-labelledby="hero-title">
+
+            <div class="container hero-container">
+
+                <div class="hero-text">
+
+                    <p class="greeting" data-i18n="hero-greeting">
+                        Hola, bienvenido
+                    </p>
+
+
+                    <h1 class="name" id="hero-title" data-i18n="hero-name">
+
+                        Soy
+                        <span class="gradient-text">
+                            Rodrigo
+                        </span>
+
+                    </h1>
+
+
+                    <h2 class="title">
+                        Full Stack Developer
+                    </h2>
+
+
+                    <p class="description" data-i18n="hero-desc">
+
+                        Especializado en construir aplicaciones web modernas,
+                        rápidas y escalables. Apasionado por la arquitectura
+                        de código limpia y las interfaces de usuario interactivas.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#proyectos" class="btn btn-primary" data-i18n="hero-btn-1">
+                            Ver proyectos
+                        </a>
+
+                        <a href="#contacto" class="btn btn-secondary" data-i18n="hero-btn-2">
+                            Contáctame
+                        </a>
+
+                    </div>
+
+                    <div class="hero-meta" aria-label="Disponibilidad y especialidad">
+                        <span data-i18n="hero-availability"><i class="fa-solid fa-circle"></i> Disponible para
+                            oportunidades</span>
+                        <span data-i18n="hero-location"><i class="fa-solid fa-location-dot"></i> España · Remoto</span>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="race-index" aria-hidden="true">
+                        <span>02</span>
+                        <small>F2 / APEX</small>
+                    </div>
+
+                    <div class="telemetry-line" aria-hidden="true">
+                        <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+
+                    <div class="code-card">
+
+                        <div class="code-header">
+
+                            <div class="dot red"></div>
+                            <div class="dot yellow"></div>
+                            <div class="dot green"></div>
+
+                            <span class="code-file">developer.js</span>
+
+                        </div>
+
+
+                        <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="property">name</span>: <span class="string">'Rodrigo'</span>,
+  <span class="property">skills</span>: [<span class="string">'PHP'</span>, <span class="string">'Bootstrap'</span>, <span class="string">'JavaScript'</span>, <span class="string">'...'</span>],
+  <span class="property">hardWorker</span>: <span class="keyword">true</span>,
+  <span class="property">problemSolver</span>: <span class="keyword">true</span>
+};</code></pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+         SOBRE MÍ
+         ========================================== -->
+
+        <section id="sobre-mi" class="section-padding">
+
+            <div class="container">
+
+                <h2 class="section-title" data-i18n="about-title">
+                    Sobre Mí
+                </h2>
+
+
+                <div class="about-wrapper glass-card">
+
+                    <div class="about-content">
+
+                        <p data-i18n="about-p1">
+
+                            Soy un desarrollador Full Stack con un fuerte enfoque
+                            en crear experiencias digitales eficientes y atractivas.
+                            Me encanta transformar problemas complejos en aplicaciones
+                            web intuitivas utilizando las mejores prácticas de la industria.
+
+                        </p>
+
+
+                        <p data-i18n="about-p2">
+
+                            Mi objetivo constante es escribir código limpio,
+                            modular y mantenible mientras sigo explorando nuevas
+                            tecnologías para expandir mi conjunto de habilidades.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="skills-grid">
+
+
+                        <!-- Frontend -->
+
+                        <div class="skill-category">
+
+                            <h3>
+                                <i class="fa-solid fa-code text-red"></i>
+                                Frontend
+                            </h3>
+
+                            <div class="skills-flex-container">
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-html5"></i>
+                                    HTML5
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                    CSS3
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-js"></i>
+                                    JavaScript
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-bootstrap"></i>
+                                    Bootstrap
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Backend -->
+
+                        <div class="skill-category">
+
+                            <h3>
+                                <i class="fa-solid fa-server text-red"></i>
+                                Backend
+                            </h3>
+
+                            <div class="skills-flex-container">
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-php"></i>
+                                    PHP
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-solid fa-database"></i>
+                                    SQL / BBDD
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Herramientas -->
+
+                        <div class="skill-category">
+
+                            <h3>
+
+                                <i class="fa-solid fa-screwdriver-wrench text-red"></i>
+
+                                <span data-i18n="skills-tools">
+                                    Herramientas
+                                </span>
+
+                            </h3>
+
+
+                            <div class="skills-flex-container">
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-git-alt"></i>
+                                    Git
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-brands fa-figma"></i>
+                                    Figma
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-solid fa-terminal"></i>
+                                    Terminal
+                                </div>
+
+                                <div class="skill-item">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                    VS Code
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+         PROYECTOS
+         ========================================== -->
+
+        <section id="proyectos" class="section-padding">
+
+            <div class="container">
+
+                <h2 class="section-title" data-i18n="projects-title">
+                    Mis Proyectos
+                </h2>
+
+                <p class="section-coordinate" aria-hidden="true">03 — SELECTED WORK / 2026</p>
+
+
+                <!-- ======================================
+                 PROYECTO 1 - F1
+                 ====================================== -->
+
+                <div class="featured-project-container">
+
+                    <div class="project-card featured-card glass-card">
+
+                        <div class="project-image main-tfg-bg">
+
+                            <img src="img/f1.png" alt="F1 Setup Sim Vehicle" class="f1-project-img">
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <span class="project-badge" data-i18n="proj1-badge">
+
+                                Proyecto Destacado (TFG DAW)
+
+                            </span>
+
+
+                            <h3>
+                                F1 Setup Simulator
+                                <span class="red">&</span>
+                                Store
+                            </h3>
+
+
+                            <p data-i18n="proj1-desc">
+
+                                Proyecto de Fin de Grado centrado en el desarrollo
+                                de una plataforma web para la creación, gestión y
+                                análisis de setups de Fórmula 1. Permite crear y
+                                editar configuraciones, consultar setups de otros
+                                usuarios y visualizar información mediante gráficas
+                                y modelos 3D. Además, incorpora un sistema de usuarios,
+                                protección de accesos, panel de administración y una
+                                tienda online con catálogo, carrito y gestión de pedidos.
+
+                            </p>
+
+
+                            <div class="pending-improvements-box">
+
+                                <h4 data-i18n="proj1-roadmap-title">
+                                    Funcionalidades principales:
+                                </h4>
+
+                                <ul>
+
+                                    <li data-i18n="proj1-r1">
+                                        Creación, edición y gestión de setups personalizados.
+                                    </li>
+
+                                    <li data-i18n="proj1-r2">
+                                        Sistema de usuarios con diferentes niveles
+                                        de acceso y protección de URLs.
+                                    </li>
+
+                                    <li data-i18n="proj1-r3">
+                                        Tienda online con catálogo de productos,
+                                        carrito y gestión de pedidos.
+                                    </li>
+
+                                    <li data-i18n="proj1-r4">
+                                        Panel de administración para la gestión
+                                        de usuarios y contenido.
+                                    </li>
+
+                                    <li data-i18n="proj1-r5">
+                                        Visualización de datos mediante gráficas,
+                                        modelos 3D y animaciones interactivas.
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <div class="tech-tags">
+
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>AJAX</span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/EstenoesC4N0V4S/proyecto-final-daw" class="btn-link"
+                                    target="_blank" rel="noopener noreferrer">
+
+                                    <i class="fa-brands fa-github"></i>
+
+                                    <span data-i18n="btn-code">
+                                        Código
+                                    </span>
+
+                                </a>
+
+
+                                <a href="https://f1setupsim.infinityfreeapp.com" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link">
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    <span data-i18n="btn-demo">
+                                        Demo en vivo
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ======================================
+                 PROYECTOS SECUNDARIOS
+                 ====================================== -->
+
+                <div class="secondary-projects-grid">
+
+
+                    <!-- PROYECTO 2 -->
+
+                    <div class="project-card glass-card">
+
+                        <div class="project-image matatopos-bg">
+
+                            <div class="mock-img">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <h3 data-i18n="proj2-title">
+                                Juego Matatopos
+                            </h3>
+
+
+                            <p data-i18n="proj2-desc">
+
+                                Un divertido juego interactivo de reflejos
+                                desarrollado con JavaScript nativo en donde
+                                el usuario debe acertar a los objetivos rápidos
+                                mientras avanza la dificultad.
+
+                            </p>
+
+
+                            <div class="tech-tags">
+
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/EstenoesC4N0V4S/Mata-Topos" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link"
+                                    aria-label="Ver código de Juego Matatopos en GitHub">
+
+                                    <i class="fa-brands fa-github"></i>
+
+                                    <span data-i18n="btn-code">
+                                        Código
+                                    </span>
+
+                                </a>
+
+
+                                <a href="https://estenoesc4n0v4s.github.io/Mata-Topos/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link">
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    <span data-i18n="btn-demo">
+                                        Demo en vivo
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROYECTO 3 -->
+
+                    <div class="project-card glass-card">
+
+                        <div class="project-image hundir-bg">
+
+                            <div class="mock-img">
+                                <i class="fa-solid fa-anchor"></i>
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <h3 data-i18n="proj3-title">
+                                Hundir la Flota
+                            </h3>
+
+
+                            <p data-i18n="proj3-desc">
+
+                                El clásico juego estratégico de mesa adaptado
+                                a la web. Cuenta con lógica avanzada para
+                                posicionamiento de barcos y algoritmos de juego
+                                contra la IA.
+
+                            </p>
+
+
+                            <div class="tech-tags">
+
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>Bootstrap</span>
+                                <span>JavaScript</span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="https://github.com/EstenoesC4N0V4S/Hundir-la-flota" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link"
+                                    aria-label="Ver código de Hundir la Flota en GitHub">
+
+                                    <i class="fa-brands fa-github"></i>
+
+                                    <span data-i18n="btn-code">
+                                        Código
+                                    </span>
+
+                                </a>
+
+
+                                <a href="https://estenoesc4n0v4s.github.io/Hundir-la-flota/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-link">
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    <span data-i18n="btn-demo">
+                                        Demo en vivo
+                                    </span>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+         CONTACTO
+         ========================================== -->
+
+        <section id="contacto" class="section-padding text-center">
+
+            <div class="container">
+
+                <h2 class="section-title" data-i18n="contact-title">
+                    Hablemos
+                </h2>
+
+
+                <p class="contact-text" data-i18n="contact-desc">
+
+                    Actualmente estoy en busca de mi primera oportunidad
+                    profesional como desarrollador web. Si te encaja mi perfil,
+                    tienes un proyecto interesante o simplemente quieres saludar,
+                    ¡mi bandeja de entrada está abierta!
+
+                </p>
+
+
+                <a href="mailto:rcanovasmoreta@gmail.com" class="btn contact-email">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    rcanovasmoreta@gmail.com
+
+                </a>
+
+
+                <div class="social-links">
+
+                    <a href="https://github.com/EstenoesC4N0V4S" class="glass-icon" target="_blank"
+                        rel="noopener noreferrer" title="GitHub" aria-label="Perfil de GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+
+                    <a href="#" class="glass-icon is-disabled" title="LinkedIn próximamente"
+                        aria-label="LinkedIn próximamente" aria-disabled="true">
+
+                        <i class="fa-brands fa-linkedin-in"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+
+    <footer class="footer text-center">
+
+        <div class="container">
+
+            <p data-i18n="footer-text">
+
+                &copy; 2026 Rodrigo.
+                Diseñado y construido con pasión.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         SCRIPTS
+         ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+```
