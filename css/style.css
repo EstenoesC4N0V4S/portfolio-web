@@ -314,6 +314,7 @@ html[data-theme="dark"] .slider::before {
 
 .hero-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -785,18 +786,28 @@ html[data-theme="light"] .tech-tags span {
 }
 
 @media (max-width: 992px) {
+  .container {
+    padding-right: clamp(1.5rem, 5vw, 2.5rem);
+    padding-left: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 3rem;
+    gap: clamp(2rem, 6vw, 3.5rem);
+  }
+  .hero-text {
+    max-width: 720px;
+    margin: 0 auto;
   }
   .hero-visual {
-    max-width: 480px;
+    max-width: min(620px, 100%);
     margin: 0 auto;
     width: 100%;
   }
   .hero-buttons {
     justify-content: center;
+    row-gap: 0.8rem;
   }
   .skills-grid {
     grid-template-columns: 1fr;
@@ -812,6 +823,13 @@ html[data-theme="light"] .tech-tags span {
   }
   .secondary-projects-grid {
     grid-template-columns: 1fr;
+  }
+  .code-card {
+    overflow-x: auto;
+  }
+  .project-links {
+    flex-wrap: wrap;
+    row-gap: 0.8rem;
   }
 }
 
@@ -886,7 +904,6 @@ html[data-theme="light"] .tech-tags span {
    9. NAVEGACIÓN POR SECCIONES CON SCROLL
    ========================================================================== */
 
-
 .hero,
 #sobre-mi,
 #proyectos,
@@ -894,7 +911,6 @@ html[data-theme="light"] .tech-tags span {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
-
 
 @media (max-width: 768px) {
   html {
@@ -1017,7 +1033,10 @@ html[data-theme="light"] .tech-tags span {
 }
 
 .project-card {
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -1049,7 +1068,9 @@ html[data-theme="light"] .tech-tags span {
 .reveal {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.2, 0.65, 0.3, 1);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.2, 0.65, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -1085,7 +1106,9 @@ html[data-theme="light"] .tech-tags span {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
@@ -1120,7 +1143,9 @@ body::before {
   content: "";
   pointer-events: none;
   opacity: 0.36;
-  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
 }
@@ -1341,8 +1366,14 @@ html[data-theme="dark"] .btn-primary {
   padding: 1.8rem;
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(25, 27, 36, 0.97), rgba(9, 10, 14, 0.94));
-  box-shadow: 22px 26px 0 rgba(239, 68, 68, 0.1), 0 28px 65px rgba(0, 0, 0, 0.42);
+  background: linear-gradient(
+    135deg,
+    rgba(25, 27, 36, 0.97),
+    rgba(9, 10, 14, 0.94)
+  );
+  box-shadow:
+    22px 26px 0 rgba(239, 68, 68, 0.1),
+    0 28px 65px rgba(0, 0, 0, 0.42);
 }
 
 html[data-theme="light"] .code-card {
@@ -1419,12 +1450,24 @@ html[data-theme="light"] .code-card {
   background: var(--signal);
 }
 
-.telemetry-line span:nth-child(1) { height: 9px; }
-.telemetry-line span:nth-child(2) { height: 18px; }
-.telemetry-line span:nth-child(3) { height: 12px; }
-.telemetry-line span:nth-child(4) { height: 24px; }
-.telemetry-line span:nth-child(5) { height: 15px; }
-.telemetry-line span:nth-child(6) { height: 28px; }
+.telemetry-line span:nth-child(1) {
+  height: 9px;
+}
+.telemetry-line span:nth-child(2) {
+  height: 18px;
+}
+.telemetry-line span:nth-child(3) {
+  height: 12px;
+}
+.telemetry-line span:nth-child(4) {
+  height: 24px;
+}
+.telemetry-line span:nth-child(5) {
+  height: 15px;
+}
+.telemetry-line span:nth-child(6) {
+  height: 28px;
+}
 
 .section-padding {
   padding-top: 9rem;
@@ -1469,7 +1512,12 @@ html[data-theme="light"] .code-card {
 }
 
 .main-tfg-bg {
-  background: radial-gradient(circle at 66% 30%, #ff625b 0%, #a41c1c 35%, #211011 74%);
+  background: radial-gradient(
+    circle at 66% 30%,
+    #ff625b 0%,
+    #a41c1c 35%,
+    #211011 74%
+  );
 }
 
 .f1-project-img {
@@ -1485,7 +1533,12 @@ html[data-theme="light"] .code-card {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(120deg, transparent 0 46%, rgba(255,255,255,0.08) 46% 49%, transparent 49% 100%);
+  background: linear-gradient(
+    120deg,
+    transparent 0 46%,
+    rgba(255, 255, 255, 0.08) 46% 49%,
+    transparent 49% 100%
+  );
 }
 
 .footer {
@@ -1525,7 +1578,10 @@ html[data-theme="light"] .code-card {
 .language-code {
   display: inline-block;
   color: var(--text-muted);
-  transition: color 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+  transition:
+    color 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
 }
 
 .language-separator,
@@ -1609,8 +1665,16 @@ html[data-theme="light"] .code-card {
   height: 34px;
   content: "";
   opacity: 0.17;
-  background-image: linear-gradient(45deg, #fff 25%, transparent 25%), linear-gradient(-45deg, #fff 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #fff 75%), linear-gradient(-45deg, transparent 75%, #fff 75%);
-  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-image:
+    linear-gradient(45deg, #fff 25%, transparent 25%),
+    linear-gradient(-45deg, #fff 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #fff 75%),
+    linear-gradient(-45deg, transparent 75%, #fff 75%);
+  background-position:
+    0 0,
+    0 8px,
+    8px -8px,
+    -8px 0;
   background-size: 16px 16px;
 }
 
@@ -1668,7 +1732,12 @@ section[id] {
   left: 0;
   height: 1px;
   content: "";
-  background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glass-border),
+    transparent
+  );
 }
 
 .project-info h3 {
@@ -1688,7 +1757,10 @@ section[id] {
 .tech-tags span {
   border-radius: 999px;
   padding: 0.32rem 0.72rem;
-  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .tech-tags span:hover {
